@@ -2,7 +2,7 @@
 $Module = $Params['Module'];
 
 $tpl = eZTemplate::factory();
-$manager = ProcessManager::instance();
+$manager = OCCronJobProcessManager::instance();
 
 $tpl->setVariable( 'output', file_get_contents($manager->getOutputFile()) );
 $tpl->setVariable( 'errors', file_get_contents($manager->getErrorFile()) );

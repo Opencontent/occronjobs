@@ -1,6 +1,6 @@
 <?php
 
-class ProcessManager
+class OCCronJobProcessManager
 {
 	
 	/**
@@ -37,7 +37,7 @@ class ProcessManager
 		$outputFile = $ini->variable( 'ProcessSettings','OutputFile' );
 		$errorFile = $ini->variable( 'ProcessSettings','ErrorFile' );
 		
-		return new ProcessManager( $scriptRoot, $executable, $sleep, $maxExecutionTime, $outputFile, $errorFile );
+		return new OCCronJobProcessManager( $scriptRoot, $executable, $sleep, $maxExecutionTime, $outputFile, $errorFile );
 	}
 	 
 	/**
@@ -68,7 +68,7 @@ class ProcessManager
     {
 		foreach( $this->scripts as $script )
         {
-			$this->running[] = new Process( $this->executable, $this->root, $script["script_name"], $script["max_execution_time"], $this->outputFile, $this->errorFile );
+			$this->running[] = new OCCronJobProcess( $this->executable, $this->root, $script["script_name"], $script["max_execution_time"], $this->outputFile, $this->errorFile );
 			$this->processesRunning++;
 			sleep( $this->sleepTime );
 		}

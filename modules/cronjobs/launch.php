@@ -49,7 +49,7 @@ foreach( $lastOptions as $name => $type )
 
 eZLog::write( $part, 'occrontab.log' );
 
-$manager = ProcessManager::instance();
+$manager = OCCronJobProcessManager::instance();
 $manager->cleanOutputFile();
 $manager->cleanErrorFile();
 $manager->addScript( "runcronjobs.php", $part );

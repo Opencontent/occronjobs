@@ -1,6 +1,6 @@
 <?php
 
-class Process
+class OCCronJobProcess
 {
 	
 	/**

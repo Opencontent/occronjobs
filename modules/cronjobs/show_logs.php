@@ -4,7 +4,7 @@ $Module = $Params['Module'];
 $tpl = eZTemplate::factory();
 $manager = SystemLogManager();
 
-$tpl->setVariable( 'list', $manager->list()) );
+$tpl->setVariable( 'list', $manager->list() );
 
 $Result = array();
 $Result['content'] = $tpl->fetch( 'design:cronjobs/systemlogs.tpl' );
